@@ -13,8 +13,8 @@
   </script>
   <script type="text/javascript">
     function onTelegramAuth(user) {
-      document.body.innerHTML = '<h2>Welcome, ' + user.first_name + '!</h2><pre>' + JSON.stringify(user, null, 2) + '</pre>';
-      // Можно что-то еще сделать с данными пользователя здесь
+      var json = encodeURIComponent(JSON.stringify(user));
+      window.location.href = "fishingbaron://tg-auth?json=" + json;
     }
   </script>
 </body>
