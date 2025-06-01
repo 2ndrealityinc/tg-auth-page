@@ -14,7 +14,7 @@
   <script type="text/javascript">
   function onTelegramAuth(user) {
     var data = encodeURIComponent(JSON.stringify(user));
-    window.location.href = "fishingbaron://tglogin?user=" + data;
+    setTimeout(function() { window.location.href = "fishingbaron://tglogin?user=" + data; }, 500);
   }
   </script>
 </body>
