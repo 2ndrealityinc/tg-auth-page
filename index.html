@@ -12,12 +12,10 @@
     data-request-access="write"></script>
 
   <script type="text/javascript">
-    function onTelegramAuth(user) {
-      // Показываем всю информацию о пользователе после авторизации
-      document.body.innerHTML = '<h2>Welcome, ' + user.first_name + '!</h2><pre>' + JSON.stringify(user, null, 2) + '</pre>';
-      // Если нужен alert:
-      // alert(JSON.stringify(user, null, 2));
-    }
+  function onTelegramAuth(user) {
+    var data = encodeURIComponent(JSON.stringify(user));
+    window.location.href = "fishingbaron://tglogin?user=" + data;
+  }
   </script>
 </body>
 </html>
