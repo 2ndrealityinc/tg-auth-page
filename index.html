@@ -2,19 +2,53 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Telegram Login</title>
+  <title>Вход через Telegram для Fishing Baron</title>
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #f7fafd;
+      font-family: system-ui, sans-serif;
+    }
+    .instructions {
+      max-width: 400px;
+      margin-bottom: 32px;
+      color: #222;
+      font-size: 1.13em;
+      text-align: center;
+      line-height: 1.5;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px #0001;
+      padding: 18px 20px 14px;
+    }
+  </style>
 </head>
 <body>
+  <div class="instructions">
+    <strong>Сохранение игры через Telegram</strong><br><br>
+    Войдите через Telegram, чтобы связать прогресс с вашим аккаунтом.<br>
+    Это нужно для того, чтобы вы могли продолжить игру на любом устройстве — даже если смените телефон или переустановите игру.<br><br>
+    <small>Мы не получаем и не храним ваши личные данные, кроме вашего Telegram ID.<br>
+    Вход необходим только для сохранения и восстановления игрового прогресса.</small>
+  </div>
+
   <script async src="https://telegram.org/js/telegram-widget.js?22"
     data-telegram-login="FishingBaronBot"
-    data-size="medium"
+    data-size="large"
     data-onauth="onTelegramAuth(user)"
     data-request-access="write"></script>
 
-  <script type="text/javascript">
+  <script>
   function onTelegramAuth(user) {
     var data = encodeURIComponent(JSON.stringify(user));
-    setTimeout(function() { window.location.href = "fishingbaron://tglogin?user=" + data; }, 500);
+    setTimeout(function() {
+      window.location.href = "fishingbaron://tglogin?user=" + data;
+    }, 500);
   }
   </script>
 </body>
