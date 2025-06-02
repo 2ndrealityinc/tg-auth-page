@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Вход через Telegram для Fishing Baron</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       min-height: 100vh;
@@ -15,16 +16,39 @@
       font-family: system-ui, sans-serif;
     }
     .instructions {
-      max-width: 400px;
-      margin-bottom: 32px;
+      max-width: 94vw;
+      width: 370px;
+      margin-bottom: 38px;
       color: #222;
-      font-size: 1.13em;
+      font-size: 1.23em;
       text-align: center;
       line-height: 1.5;
       background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 2px 12px #0001;
-      padding: 18px 20px 14px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px #0001;
+      padding: 26px 18px 20px;
+      transition: box-shadow 0.2s;
+    }
+    .instructions strong {
+      font-size: 1.1em;
+    }
+    @media (max-width: 480px) {
+      .instructions {
+        width: 99vw;
+        font-size: 1.18em;
+        padding: 18px 4vw 16px 4vw;
+        border-radius: 16px;
+        margin-bottom: 28px;
+      }
+      .instructions strong {
+        font-size: 1.15em;
+      }
+    }
+    @media (max-width: 350px) {
+      .instructions {
+        font-size: 1.07em;
+        padding: 12px 2vw 11px 2vw;
+      }
     }
   </style>
 </head>
@@ -32,7 +56,8 @@
   <div class="instructions">
     <strong>Сохранение игры через Telegram</strong><br><br>
     Войдите через Telegram, чтобы связать прогресс с вашим аккаунтом.<br>
-    Это нужно для того, чтобы вы могли продолжить игру на любом устройстве — даже если смените телефон или переустановите игру.<br><br>
+    Это нужно для того, чтобы вы могли продолжить игру на любом устройстве —<br>
+    даже если смените телефон или переустановите игру.<br><br>
     <small>Мы не получаем и не храним ваши личные данные, кроме вашего Telegram ID.<br>
     Вход необходим только для сохранения и восстановления игрового прогресса.</small>
   </div>
